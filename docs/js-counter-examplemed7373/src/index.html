@@ -1,0 +1,17 @@
+<h1>Some headline about Apple </h1>
+<p>While you have been reading this, Apple has earned £<span id="money">0</span></p>
+
+<script>
+var annualTotal = 37470000000; // total per year
+var amountPerSecond = annualTotal/365/24/60/60; //365 days, 24 hours, 60 minutes, 60 seconds
+console.log("per second amount is "+amountPerSecond);
+var runningTotal = 0 // set a running total which will change
+
+function updateAmount(){ //this function updates the runningTotal
+  console.log("updateAmount running");
+  console.log(runningTotal);
+  runningTotal = runningTotal+amountPerSecond; //increase runningTotal
+  document.getElementById('money').innerHTML = runningTotal; // display on page in HTML element with id="money"
+}
+setInterval(updateAmount, 1000); //run updateAmount function every 1000 milliseconds
+</script>
